@@ -1,3 +1,4 @@
+
 name: "CI"
 
 defaults:
@@ -5,16 +6,8 @@ defaults:
     shell: bash
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - ready_for_review
-  push:
-    branches:
-      - develop
-      - staging
-
+  workflow_dispatch:
+  # Automatic triggers removed; invoke through FounderOS/Admin Gate.
 concurrency:
   group: ${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true

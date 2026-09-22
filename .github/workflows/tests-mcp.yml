@@ -1,29 +1,9 @@
+
 name: "MCP CI"
 
 on:
-  pull_request:
-    branches:
-      - develop
-      - staging
-      - main
-
-    types:
-      - opened
-      - synchronize
-      - ready_for_review
-
-    paths:
-      - 'mcp/**'
-
-  push:
-    branches:
-      - develop
-      - staging
-      - main
-
-    paths:
-      - 'mcp/**'
-
+  workflow_dispatch:
+  # Automatic triggers removed; invoke through FounderOS/Admin Gate.
 jobs:
   test-mcp:
     if: ${{ !github.event.pull_request.draft }}

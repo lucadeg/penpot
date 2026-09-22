@@ -1,14 +1,7 @@
+
 name: Plugins/packages deployer
 
 on:
-  push:
-    branches:
-      - develop
-      - staging
-      - main
-    paths:
-      - 'plugins/apps/*-plugin/**'
-      - 'libs/plugins-styles/**'
   workflow_dispatch:
     inputs:
       gh_ref:
@@ -21,6 +14,7 @@ on:
           - staging
           - main
 
+  # Automatic triggers removed; invoke through FounderOS/Admin Gate.
 jobs:
   detect-changes:
     runs-on: ubuntu-latest

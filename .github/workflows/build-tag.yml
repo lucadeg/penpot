@@ -1,11 +1,9 @@
+
 name: _TAG
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - '*'
-
+  # Automatic triggers removed; invoke through FounderOS/Admin Gate.
 jobs:
   build-bundle:
     uses: ./.github/workflows/build-bundle.yml
